@@ -26,10 +26,13 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      - name: Accept Android SDK licenses and install build tools
+      # Only accept the licenses. The Android Gradle Plugin downloads the exact platform and
+      # build-tools it needs (compileSdk 37 with compileSdkMinor 1 is not the package "android-37",
+      # so installing "platforms;android-37" by hand fails).
+      - name: Accept Android SDK licenses
         run: |
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;37.0.0" "platforms;android-37" > /dev/null
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --list 2>/dev/null | grep -E "platforms;android-3[6-9]|build-tools;3[6-9]" || true
 
       - name: Build debug APKs
         run: |
@@ -72,10 +75,13 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      - name: Accept Android SDK licenses and install build tools
+      # Only accept the licenses. The Android Gradle Plugin downloads the exact platform and
+      # build-tools it needs (compileSdk 37 with compileSdkMinor 1 is not the package "android-37",
+      # so installing "platforms;android-37" by hand fails).
+      - name: Accept Android SDK licenses
         run: |
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;37.0.0" "platforms;android-37" > /dev/null
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --list 2>/dev/null | grep -E "platforms;android-3[6-9]|build-tools;3[6-9]" || true
 
       - name: Run unit tests (both editions)
         run: |
