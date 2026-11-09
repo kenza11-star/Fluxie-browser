@@ -66,7 +66,7 @@ class LiteActivity : Activity() {
 
     private lateinit var rootView: LinearLayout
     private lateinit var addressBar: EditText
-    private lateinit var progress: ProgressBar
+    private lateinit var progressBar: ProgressBar
     private lateinit var webContainer: FrameLayout
     private lateinit var backButton: ImageButton
     private lateinit var forwardButton: ImageButton
@@ -202,12 +202,12 @@ class LiteActivity : Activity() {
         top.addView(iconButton(R.drawable.ic_lite_more, R.string.lite_cd_menu) { showMenu() }, LinearLayout.LayoutParams(dp(44), dp(44)))
         root.addView(top, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
 
-        progress = ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal).apply {
+        progressBar = ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal).apply {
             max = 100
             visibility = View.GONE
             progressDrawable.setColorFilter(color(R.color.fluxie_lite_accent), PorterDuff.Mode.SRC_IN)
         }
-        root.addView(progress, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(3)))
+        root.addView(progressBar, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(3)))
 
         webContainer = FrameLayout(this)
         root.addView(webContainer, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
@@ -448,7 +448,7 @@ class LiteActivity : Activity() {
                 if (url != null && isWebUrl(url)) tab.url = url
                 if (tab.id == tabList.activeId) {
                     loading = true
-                    progress.visibility = View.VISIBLE
+                    progressBar.visibility = View.VISIBLE
                     refreshChrome()
                     showAddressText()
                 }
@@ -459,7 +459,7 @@ class LiteActivity : Activity() {
                 tab.title = view?.title.orEmpty().takeUnless { it == "about:blank" } ?: ""
                 if (tab.id == tabList.activeId) {
                     loading = false
-                    progress.visibility = View.GONE
+                    progressBar.visibility = View.GONE
                     refreshChrome()
                     showAddressText()
                 }
@@ -468,8 +468,8 @@ class LiteActivity : Activity() {
         webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 if (tab.id == tabList.activeId) {
-                    progress.progress = newProgress
-                    progress.visibility = if (newProgress in 1..99) View.VISIBLE else View.GONE
+                    progressBar.progress = newProgress
+                    progressBar.visibility = if (newProgress in 1..99) View.VISIBLE else View.GONE
                 }
             }
 
