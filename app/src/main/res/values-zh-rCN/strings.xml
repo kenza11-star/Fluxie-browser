@@ -161,7 +161,7 @@
     <string name="dynamic_color_unavailable">需要 Android 12 或更高版本</string>
     <string name="search_engine_custom">自定义</string>
     <string name="custom_search_template">自定义网址模板</string>
-    <string name="custom_search_hint">在搜索词的位置使用 %s，例如 https://example.com/search?q=%s</string>
+    <string name="custom_search_hint" formatted="false">在搜索词的位置使用 %s，例如 https://example.com/search?q=%s</string>
     <string name="custom_search_invalid">请输入主机名之后包含 %s 的 http(s) 地址</string>
     <string name="settings_privacy">隐私与安全</string>
     <string name="clear_history_action">清除历史记录</string>

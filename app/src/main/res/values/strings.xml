@@ -162,7 +162,7 @@
     <string name="dynamic_color_unavailable">Requires Android 12 or newer</string>
     <string name="search_engine_custom">Custom</string>
     <string name="custom_search_template">Custom URL template</string>
-    <string name="custom_search_hint">Use %s where the search words go, e.g. https://example.com/search?q=%s</string>
+    <string name="custom_search_hint" formatted="false">Use %s where the search words go, e.g. https://example.com/search?q=%s</string>
     <string name="custom_search_invalid">Enter an http(s) address that contains %s after the host</string>
     <string name="settings_privacy">Privacy and Security</string>
     <string name="clear_history_action">Clear history</string>
