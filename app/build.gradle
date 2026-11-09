@@ -105,11 +105,18 @@ configurations {
 
 dependencies {
 
+    def composeBom = platform('androidx.compose:compose-bom:2026.03.00')
     // Shared by both editions: nothing. The Lite browser uses only framework classes.
+
+    // The Compose compiler plugin is applied to every variant and refuses to compile unless the Compose
+    // runtime is on the classpath. Lite only needs it at compile time (never packaged into the APK).
+    liteCompileOnly composeBom
+    liteCompileOnly 'androidx.compose.runtime:runtime'
+    testLiteImplementation composeBom
+    testLiteImplementation 'androidx.compose.runtime:runtime'
 
     // ---- full edition only ----
     // Compose BOM
-    def composeBom = platform('androidx.compose:compose-bom:2026.03.00')
     fullImplementation composeBom
     testFullImplementation composeBom
 
