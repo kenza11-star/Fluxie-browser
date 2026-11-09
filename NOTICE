@@ -1,0 +1,27 @@
+Fluxie
+======
+
+Fluxie is a derivative work of Hydrogen Browser, an open-source Android
+browser released under the MIT License.
+
+Original project
+----------------
+  Name:      Hydrogen Browser
+  Source:    https://github.com/sileneer/Hydrogen-Browser
+  License:   MIT (see the LICENSE file in this repository, unchanged)
+  Copyright: Copyright (c) 2022 Liu ZIhao (as stated in LICENSE)
+             Copyright (c) 2020-2026 Sileneer (as stated in the app's
+             original About screen and license text)
+
+Changes made in Fluxie
+----------------------
+  - Renamed the app to "Fluxie" (applicationId and namespace
+    com.fluxie.browser, app label "Fluxie").
+  - Moved Kotlin sources from com.sileneer.hydrogenbrowser to
+    com.fluxie.browser and renamed the HydrogenDatabase, HydrogenNavGraph
+    and HydrogenBrowserTheme symbols to FluxieDatabase, FluxieNavGraph
+    and FluxieTheme.
+
+The original copyright notice and MIT permission notice are preserved in
+LICENSE and must be included in all copies or substantial portions of
+this software, as required by that license.

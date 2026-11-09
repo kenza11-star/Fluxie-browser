@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fluxie</string>
+    <string name="copyright">版权所有 \u00A9 2020\u20132026 Sileneer。保留所有权利。</string>
+    <string name="version_format">版本：%1$s</string>
+
+    <!-- Screen titles -->
+    <string name="settings">设置</string>
+    <string name="about">关于</string>
+    <string name="homepage">主页</string>
+
+    <!-- Settings items -->
+    <string name="settings_search_engine">搜索引擎</string>
+    <string name="settings_homepage">主页</string>
+    <string name="homepage_start_page">起始页</string>
+    <string name="homepage_custom_url">自定义网址</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_open_source">开放源代码</string>
+
+    <!-- Language settings -->
+    <string name="language">语言</string>
+    <string name="language_follow_system">跟随系统</string>
+    <string name="language_english">English</string>
+    <string name="language_chinese">简体中文</string>
+
+    <!-- Common dialog buttons -->
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <!-- Search engine dialog -->
+    <string name="select_search_engine">请选择搜索引擎：</string>
+
+    <!-- Homepage dialog -->
+    <string name="input_new_homepage_url_below">请在下方输入新的主页地址：</string>
+    <string name="current_homepage">\n当前主页：%1$s</string>
+<string name="homepage_edit_error_empty">错误：输入的网址为空</string>
+    <string name="homepage_edit_error_invalid">错误：网址格式无效</string>
+
+    <!-- Open Source dialog -->
+    <string name="open_source_title">开放源代码</string>
+    <string name="view_on_github">在 GitHub 上查看</string>
+
+    <!-- Exit dialog -->
+    <string name="exit_warning_title">警告</string>
+    <string name="exit_warning_message">确定要退出吗？</string>
+
+    <!-- Address bar -->
+    <string name="address_bar_hint">通过 %1$s 搜索或输入网址</string>
+
+    <!-- Menu items -->
+    <string name="menu_back">后退</string>
+    <string name="menu_forward">前进</string>
+    <string name="menu_home">主页</string>
+
+    <!-- Tabs -->
+    <string name="new_tab">新标签页</string>
+    <string name="new_tab_action">+ 新标签页</string>
+    <string name="close_tab">关闭</string>
+    <string name="tabs_title">标签页</string>
+    <string name="new_incognito_tab_action">+ 新无痕标签页</string>
+    <string name="restore_closed_tab">重新打开已关闭的标签页</string>
+    <string name="incognito">无痕</string>
+    <string name="stop_loading">停止加载</string>
+    <string name="incognito_unsupported">无痕标签页需要支持多配置文件的较新版 Android System WebView。请更新 WebView 后重试。</string>
+
+    <!-- Address bar overlay -->
+    <string name="copy_link">复制链接</string>
+    <string name="share">分享</string>
+    <string name="edit_url">编辑网址</string>
+    <string name="link_copied">链接已复制</string>
+
+    <!-- New Tab Page shortcuts -->
+    <string name="add_shortcut">添加快捷方式</string>
+    <string name="edit_shortcut">编辑快捷方式</string>
+    <string name="shortcut_name">名称</string>
+    <string name="shortcut_url">网址</string>
+    <string name="delete">删除</string>
+    <string name="save">保存</string>
+
+    <!-- WebView errors -->
+    <string name="webview_error">错误：%1$s</string>
+    <string name="retry">重试</string>
+
+    <!-- Find in page -->
+    <string name="find_in_page">在页面中查找</string>
+    <string name="find_previous">上一个匹配</string>
+    <string name="find_next">下一个匹配</string>
+
+    <!-- Accessibility -->
+    <string name="more_options">更多选项</string>
+    <string name="refresh">刷新</string>
+    <string name="clear_text">清除文本</string>
+    <string name="tab_count">标签页数量</string>
+
+    <!-- History -->
+    <string name="history">历史记录</string>
+    <string name="search_history">搜索历史记录\u2026</string>
+    <string name="clear_all_history">清除所有历史记录</string>
+    <string name="clear_history_title">清除浏览历史记录？</string>
+    <string name="clear_history_message">这将删除您所有的浏览历史记录。</string>
+    <string name="history_deleted">历史记录已删除</string>
+    <string name="undo">撤销</string>
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="no_history">没有浏览历史记录</string>
+
+    <!-- Bookmarks -->
+    <string name="bookmarks">书签</string>
+    <string name="bookmark_this_page">收藏此页面</string>
+    <string name="remove_bookmark">移除书签</string>
+    <string name="bookmark_added">已添加书签</string>
+    <string name="bookmark_added_to">已保存到 %1$s</string>
+    <string name="change_folder">更改文件夹</string>
+    <string name="bookmark_removed">已移除书签</string>
+    <string name="edit_bookmark">编辑书签</string>
+    <string name="new_folder">新建文件夹</string>
+    <string name="folder_name">文件夹名称</string>
+    <string name="move_to">移动到\u2026</string>
+    <string name="no_bookmarks">暂无书签</string>
+    <string name="empty_folder">空文件夹</string>
+    <string name="edit">编辑</string>
+    <string name="delete_folder_title">删除文件夹？</string>
+    <string name="delete_folder_message">这将删除该文件夹及其中的所有书签。</string>
+    <string name="search_bookmarks">搜索书签\u2026</string>
+    <string name="root_folder">根目录</string>
+    <string name="downloads">下载</string>
+    <string name="no_downloads">暂无下载</string>
+    <string name="download_started">已开始下载</string>
+    <string name="download_failed">无法开始下载</string>
+    <string name="download_unsupported">无法保存此下载（仅支持 http 和 https 链接）</string>
+    <string name="download_state_pending">等待中\u2026</string>
+    <string name="download_state_paused">已暂停</string>
+    <string name="download_state_failed">失败</string>
+    <string name="download_state_missing">文件已被移除</string>
+    <string name="download_cannot_open">没有可打开此文件的应用</string>
+    <string name="download_deleted">已删除下载</string>
+    <string name="delete_download_title">删除下载？</string>
+    <string name="delete_download_message">文件将从此设备上删除。</string>
+    <string name="last_7_days">最近 7 天</string>
+    <string name="older">更早</string>
+    <string name="desktop_site">桌面版网站</string>
+    <string name="share_page">分享网页</string>
+    <string name="find_match_count">%1$d/%2$d</string>
+    <string name="find_no_matches">无匹配项</string>
+    <string name="close_menu">关闭菜单</string>
+    <string name="settings_search_hint">搜索设置</string>
+    <string name="settings_mode">模式</string>
+    <string name="mode_normal">普通</string>
+    <string name="mode_lite">精简</string>
+    <string name="mode_normal_desc">完整的浏览体验。选择精简模式可使用更轻量的浏览器（最多 3 个标签页、简单书签），书签和设置都会保留。</string>
+    <string name="mode_lite_desc">精简模式提供轻量浏览器，最多 3 个标签页和简单书签。选择后会切换界面，书签和设置都会保留。</string>
+    <string name="settings_appearance">外观</string>
+    <string name="theme_system">跟随系统</string>
+    <string name="theme_light">浅色</string>
+    <string name="theme_dark">深色</string>
+    <string name="dynamic_color">动态颜色</string>
+    <string name="dynamic_color_desc">使用壁纸中的颜色</string>
+    <string name="dynamic_color_unavailable">需要 Android 12 或更高版本</string>
+    <string name="search_engine_custom">自定义</string>
+    <string name="custom_search_template">自定义网址模板</string>
+    <string name="custom_search_hint">在搜索词的位置使用 %s，例如 https://example.com/search?q=%s</string>
+    <string name="custom_search_invalid">请输入主机名之后包含 %s 的 http(s) 地址</string>
+    <string name="settings_privacy">隐私与安全</string>
+    <string name="clear_history_action">清除历史记录</string>
+    <string name="clear_cookies_action">清除 Cookie 和网站数据</string>
+    <string name="clear_cache_action">清除缓存</string>
+    <string name="clear_history_done">已清除历史记录</string>
+    <string name="clear_cookies_done">已清除 Cookie 和网站数据</string>
+    <string name="clear_cache_done">已清除缓存</string>
+    <string name="clear_cookies_message">您将退出普通标签页中的网站登录。</string>
+    <string name="clear_cache_message">缓存的网页和图片将被删除。</string>
+    <string name="settings_permissions">权限</string>
+    <string name="settings_permissions_summary">相机、麦克风、位置、通知</string>
+    <string name="settings_advanced">高级</string>
+    <string name="app_info">应用信息</string>
+    <string name="app_info_summary">在 Android 设置中打开 Fluxie</string>
+    <string name="permission_camera">相机</string>
+    <string name="permission_microphone">麦克风</string>
+    <string name="permission_location">位置</string>
+    <string name="permission_notifications">通知</string>
+    <string name="permission_allowed">已允许</string>
+    <string name="permission_approximate">仅大致位置</string>
+    <string name="permission_not_allowed">未允许</string>
+    <string name="permissions_note">这是 Android 当前为 Fluxie 授予的权限。点按权限可申请，或打开系统设置进行更改。</string>
+    <string name="open_system_settings">打开系统设置</string>
+    <string name="nav_browser">浏览器</string>
+    <string name="blocked_reason_user">此网站在您的屏蔽列表中。</string>
+    <string name="blocked_reason_adult">此网站在您的成人内容列表中，且成人内容过滤已开启。</string>
+    <string name="blocked_page_title">网站已被屏蔽</string>
+    <string name="blocked_page_detail">Fluxie 未加载此页面。您可以在 设置 > 内容过滤 中更改列表。</string>
+    <string name="settings_content_filter">内容过滤</string>
+    <string name="content_filter_summary">屏蔽列表、成人内容过滤、广告和跟踪器</string>
+    <string name="adult_filter">成人内容 (18+) 过滤</string>
+    <string name="adult_filter_desc">屏蔽成人列表中的域名，并为 Google、Bing、DuckDuckGo 和 Brave Search 开启安全搜索。默认关闭。</string>
+    <string name="ad_block">屏蔽广告和跟踪器</string>
+    <string name="ad_block_desc">使用内置的知名广告和跟踪域名短列表，无法拦截所有广告。</string>
+    <string name="blocklist_general">屏蔽列表</string>
+    <string name="blocklist_adult">成人列表</string>
+    <string name="blocklist_add_hint">添加域名，例如 example.com</string>
+    <string name="blocklist_add">添加</string>
+    <string name="blocklist_import">从文本文件导入</string>
+    <string name="blocklist_empty">此列表还没有域名。</string>
+    <string name="blocklist_remove">移除</string>
+    <string name="blocklist_added">已添加 %1$s</string>
+    <string name="blocklist_already">%1$s 已在列表中</string>
+    <string name="blocklist_invalid">这不是有效的域名</string>
+    <string name="blocklist_import_result">新增 %1$d 个，已存在 %2$d 个，跳过 %3$d 行</string>
+    <string name="blocklist_import_failed">无法读取该文件</string>
+    <string name="blocklist_import_too_large">文件过大（上限 5 MB）</string>
+    <string name="blocklist_format_note">每行一个域名。也支持 hosts 文件格式 (0.0.0.0 example.com) 和 ||example.com^。以 # 开头的行为注释。屏蔽一个域名也会屏蔽其子域名。</string>
+    <string name="blocked_on_page">此页面已拦截</string>
+    <string name="clear_browsing_data">清除浏览数据</string>
+    <string name="clear_browsing_data_message">选择要删除的内容。此操作无法撤销，无痕数据不受影响。</string>
+    <string name="clear_option_history">历史记录</string>
+    <string name="clear_option_cache">缓存</string>
+    <string name="clear_option_cookies">Cookie 和网站数据</string>
+    <string name="clear_browsing_data_done">浏览数据已清除</string>
+    <string name="blocklist_clear_confirm">要移除此列表中的所有域名吗？</string>
+    <string name="blocklist_clear_all">全部移除</string>
+    <string name="app_name_lite">Fluxie Lite</string>
+    <string name="lite_address_hint">搜索或输入网址</string>
+    <string name="lite_cd_back">后退</string>
+    <string name="lite_cd_forward">前进</string>
+    <string name="lite_cd_reload">刷新</string>
+    <string name="lite_cd_stop">停止</string>
+    <string name="lite_cd_home">主页</string>
+    <string name="lite_cd_bookmarks">书签</string>
+    <string name="lite_cd_tabs">标签页</string>
+    <string name="lite_tabs_title">标签页（%1$d / %2$d）</string>
+    <string name="lite_new_tab">新标签页</string>
+    <string name="lite_close_tab">关闭标签页</string>
+    <string name="lite_tab_limit">精简版最多允许 %1$d 个标签页</string>
+    <string name="lite_untitled">新标签页</string>
+    <string name="lite_bookmarks_title">书签</string>
+    <string name="lite_add_bookmark">添加此页面</string>
+    <string name="lite_bookmark_added">已添加书签</string>
+    <string name="lite_bookmark_exists">此页面已在书签中</string>
+    <string name="lite_bookmark_removed">已移除书签</string>
+    <string name="lite_bookmarks_empty">还没有书签。</string>
+    <string name="lite_bookmark_no_page">请先打开一个网页</string>
+    <string name="lite_bookmark_hint">长按书签可将其移除。</string>
+    <string name="lite_switch_to_normal">切换到普通模式</string>
+    <string name="lite_close">关闭</string>
+    <string name="lite_start_title">Fluxie Lite</string>
+    <string name="lite_start_subtitle">简单、轻量的浏览</string>
+    <string name="lite_start_empty">您添加的书签会显示在这里。</string>
+    <string name="lite_download_external">正在用其他应用打开下载</string>
+    <string name="lite_download_no_app">没有应用可以打开此下载</string>
+    <string name="lite_remove_bookmark">从书签中移除此页面</string>
+    <string name="lite_cd_menu">菜单</string>
+</resources>

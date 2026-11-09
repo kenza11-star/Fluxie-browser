@@ -1,0 +1,107 @@
+# Fluxie built-in ad and tracker domains (local list, one domain per line; subdomains are covered).
+# Applied only to sub-resource requests (images, scripts, frames, XHR) of the page being loaded,
+# never to a page the user opens on purpose. This is a short, static list of well-known ad and
+# tracking hosts. It is NOT complete: many ads and trackers use other domains and will not be blocked.
+# Format: see BlocklistParser (plain domains, hosts-file lines, ||domain^ anchors).
+
+# Google advertising and analytics
+doubleclick.net
+googlesyndication.com
+googleadservices.com
+googletagservices.com
+adservice.google.com
+google-analytics.com
+2mdn.net
+
+# Ad exchanges and networks
+adnxs.com
+adsrvr.org
+advertising.com
+adform.net
+criteo.com
+criteo.net
+taboola.com
+outbrain.com
+rubiconproject.com
+pubmatic.com
+openx.net
+casalemedia.com
+indexww.com
+smartadserver.com
+amazon-adsystem.com
+media.net
+yieldmo.com
+sharethrough.com
+33across.com
+bidswitch.net
+contextweb.com
+lijit.com
+sovrn.com
+adroll.com
+teads.tv
+zedo.com
+revcontent.com
+mgid.com
+bidr.io
+simpli.fi
+serving-sys.com
+everesttech.net
+360yield.com
+adsymptotic.com
+ads.yahoo.com
+an.yandex.ru
+
+# Pop-up / aggressive ad networks
+popads.net
+popcash.net
+propellerads.com
+exoclick.com
+trafficjunky.net
+juicyads.com
+adsterra.com
+onclickads.net
+
+# Mobile ad SDK hosts
+adcolony.com
+applovin.com
+mopub.com
+inmobi.com
+chartboost.com
+vungle.com
+ironsrc.com
+supersonicads.com
+
+# Measurement, audience data and analytics trackers
+moatads.com
+scorecardresearch.com
+quantserve.com
+quantcount.com
+mathtag.com
+bluekai.com
+demdex.net
+krxd.net
+rlcdn.com
+pippio.com
+eyeota.net
+tapad.com
+agkn.com
+exelator.com
+analytics.yahoo.com
+flurry.com
+appsflyer.com
+kochava.com
+
+# Social and session-recording trackers
+ads-twitter.com
+analytics.twitter.com
+ads.linkedin.com
+px.ads.linkedin.com
+analytics.tiktok.com
+ads.tiktok.com
+bat.bing.com
+clarity.ms
+hotjar.com
+fullstory.com
+crazyegg.com
+mouseflow.com
+mc.yandex.ru

@@ -1,0 +1,4 @@
+<resources>
+    <!-- True only in the lite edition, which has no Normal mode to switch to. -->
+    <bool name="is_lite_edition">false</bool>
+</resources>

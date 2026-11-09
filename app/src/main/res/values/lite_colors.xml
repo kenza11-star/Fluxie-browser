@@ -1,0 +1,8 @@
+<resources>
+    <color name="fluxie_lite_background">#FF0A0A0B</color>
+    <color name="fluxie_lite_surface">#FF1C1C1F</color>
+    <color name="fluxie_lite_outline">#FF2E2E33</color>
+    <color name="fluxie_lite_text">#FFF2F2F3</color>
+    <color name="fluxie_lite_text_dim">#FF9A9AA0</color>
+    <color name="fluxie_lite_accent">#FFF2F2F3</color>
+</resources>

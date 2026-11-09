@@ -1,0 +1,9 @@
+<resources>
+    <!-- Lite mode: framework theme only (no AppCompat / Material), dark to match the Fluxie palette. -->
+    <style name="Theme.Fluxie.Lite" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">@color/fluxie_lite_background</item>
+        <item name="android:statusBarColor">@color/fluxie_lite_background</item>
+        <item name="android:navigationBarColor">@color/fluxie_lite_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
