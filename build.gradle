@@ -1,28 +1,163 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    ext.kotlin_version = '2.2.21'
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:9.3.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:compose-compiler-gradle-plugin:$kotlin_version"
-        classpath 'com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.3.6'
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
+def getVersionCode() {
+    def versionFile = file('version.properties')
+    if (versionFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionCode = versionProps['VERSION_CODE'].toInteger()
+        def runTasks = gradle.startParameter.taskNames
+        if (':app:assembleRelease' in runTasks) {
+            versionProps['VERSION_CODE'] = (++versionCode).toString()
+            versionProps.store(versionFile.newWriter(), null)
+        }
+        return versionCode
+    } else {
+        throw new GradleException("Could not find version.properties!")
     }
 }
 
-tasks.register('clean', Delete) {
-    delete rootProject.layout.buildDirectory
+def getVersionName() {
+    def versionFile = file('version.properties')
+    if (versionFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionName = versionProps['VERSION_NAME']
+        return versionName
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'com.google.devtools.ksp'
+}
+
+android {
+    compileSdk 37
+    buildToolsVersion = '37.0.0'
+
+    def currentVersionCode = getVersionCode()
+    def currentVersionName = getVersionName()
+
+    defaultConfig {
+        applicationId = "com.fluxie.browser"
+        minSdk 23
+        targetSdk 37
+        versionCode = currentVersionCode
+        versionName = currentVersionName
+    }
+
+    // Two editions built from one codebase:
+    //  - full: the Compose browser (tabs, history, downloads, settings...) plus the Lite mode screen.
+    //  - lite: only the lightweight View-based browser. No Compose, Room, DataStore, Navigation or
+    //    androidx.webkit, so the APK is smaller and nothing heavy exists to start.
+    flavorDimensions 'edition'
+    productFlavors {
+        full {
+            dimension 'edition'
+        }
+        lite {
+            dimension 'edition'
+            applicationIdSuffix '.lite'
+            versionNameSuffix '-lite'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        compose = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    namespace 'com.fluxie.browser'
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    compileSdkMinor 1
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
+}
+
+// Configurations for a flavor + build type pair (here full + debug) are not created in time for the
+// dependencies block unless they are declared first.
+configurations {
+    fullDebugImplementation
+}
+
+dependencies {
+
+    // Shared by both editions: nothing. The Lite browser uses only framework classes.
+
+    // ---- full edition only ----
+    // Compose BOM
+    def composeBom = platform('androidx.compose:compose-bom:2026.03.00')
+    fullImplementation composeBom
+    testFullImplementation composeBom
+
+    // Compose
+    fullImplementation 'androidx.compose.material3:material3'
+    // Not transitive from material3 since 1.4 — Icons.* fails to resolve without it
+    fullImplementation 'androidx.compose.material:material-icons-core'
+    fullImplementation 'androidx.compose.ui:ui'
+    fullDebugImplementation 'androidx.compose.ui:ui-test-manifest'
+
+    // Navigation Compose
+    fullImplementation 'androidx.navigation:navigation-compose:2.9.7'
+
+    // Activity Compose
+    fullImplementation 'androidx.activity:activity-compose:1.13.0'
+
+    // Lifecycle Compose
+    fullImplementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0'
+    fullImplementation 'androidx.lifecycle:lifecycle-runtime-compose:2.10.0'
+
+    // ViewModel + Lifecycle
+    fullImplementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0'
+
+    // WebView (profiles for incognito, dark mode)
+    fullImplementation 'androidx.webkit:webkit:1.15.0'
+
+    // AppCompat (needed for locale switching)
+    fullImplementation 'androidx.appcompat:appcompat:1.7.1'
+
+    // Core
+    fullImplementation 'androidx.core:core-ktx:1.18.0'
+
+    // DataStore (Normal/Lite mode, theme)
+    fullImplementation 'androidx.datastore:datastore-preferences:1.1.7'
+
+    // Room
+    def room_version = '2.8.4'
+    fullImplementation "androidx.room:room-runtime:$room_version"
+    fullImplementation "androidx.room:room-ktx:$room_version"
+    // Plain `ksp` (all variants): the lite sources contain no Room annotations, so it does nothing there.
+    ksp "androidx.room:room-compiler:$room_version"
+
+    // ---- tests ----
+    // Shared tests (src/test) run for both editions; Compose/Room/DataStore tests live in src/testFull.
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'io.mockk:mockk:1.14.9'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2'
+    testImplementation 'org.robolectric:robolectric:4.16.1'
+    testImplementation 'androidx.test:core:1.7.0'
+    testFullImplementation 'androidx.compose.ui:ui-test-junit4'
 }
